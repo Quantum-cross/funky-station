@@ -408,10 +408,7 @@ public sealed partial class StationJobsSystem
                 // become all of our selected antags
                 if (isPreselectedAntag && !preselectedAntags.All(antag =>
                         _antag.HasPrimaryAntagPreference(session, antag, AntagSelectionTime.IntraPlayerSpawn, job)))
-                {
-                    playerDeniedJobs.TryAdd(jobId, JobDenialReason.NoCharactersWithAntagPreference);
                     continue;
-                }
 
                 if (weight is not null && job.Weight != weight.Value)
                     continue;
